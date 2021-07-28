@@ -11,14 +11,23 @@ const CreateUser = ({ list, callback }) => {
     callback(list);
     console.log(list);
   };
+
   return (
     <form onSubmit={(e) => onSubmit(e)}>
       <div className="main">
         <div className="container">
           <input
+            type="number"
+            className=""
+            placeholder="Enter Id"
+            name="id"
+            value={user.id}
+            onChange={(e) => onInputChange(e)}
+          />
+          <input
             type="text"
-            className="form-control form-control-lg"
-            placeholder="Enter Your Name"
+            className=""
+            placeholder="Enter  Name"
             name="name"
             value={user.name}
             onChange={(e) => onInputChange(e)}

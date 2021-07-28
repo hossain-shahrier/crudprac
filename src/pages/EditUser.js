@@ -27,8 +27,8 @@ const EditUser = ({ list, callback }) => {
         <div className="container">
           <input
             type="text"
-            className="form-control form-control-lg"
-            placeholder="Enter Your Name"
+            className=""
+            placeholder="Enter Name"
             name="name"
             value={user.name}
             onChange={(e) => onInputChange(e)}
@@ -36,7 +36,7 @@ const EditUser = ({ list, callback }) => {
 
           <input
             type="text"
-            placeholder="Enter Your Name"
+            placeholder="Enter Dept"
             name="dept"
             value={user.dept}
             onChange={(e) => onInputChange(e)}
