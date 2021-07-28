@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { users } from "./UserData";
-import AddUser from "./pages/AddUser";
 import UserList from "./pages/UserList";
 import EditUser from "./pages/EditUser";
+import CreateUser from "./pages/CreateUser";
 
 function App() {
   const [user, setUsers] = useState(users);
@@ -15,6 +15,9 @@ function App() {
     setUsers(data);
   };
   const updatecallback = (list) => {
+    setUsers(list);
+  };
+  const createcallback = (list) => {
     setUsers(list);
   };
   return (
@@ -26,7 +29,7 @@ function App() {
             <Home />
           </Route>
           <Route path="/create">
-            <AddUser />
+            <CreateUser list={user} callback={createcallback} />
           </Route>
           <Route path="/users">
             <UserList list={user} callback={deletecallback} />
